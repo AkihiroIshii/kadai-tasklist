@@ -1,8 +1,8 @@
 <h1>タスク一覧</h1>
 
-<ul>
+<ul style="list-style: none;">
   <% @tasks.each do |task| %>
-    <li><%= task.content %> <%= link_to '詳細', task %></li>
+    <li><%= link_to task.id, task %> <%= task.content %></li>
   <% end %>
 </ul>
 
