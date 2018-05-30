@@ -1,0 +1,100 @@
+2018-05-29T21:59:45.864686+00:00 app[web.1]: [f62eb48d-d944-4942-b2c8-c4ad8befd179] app/controllers/application_controller.rb:9:in `require_user_logged_in'
+2018-05-29T21:59:45.866037+00:00 heroku[router]: at=info method=GET path="/users/1" host=tasklist-ishii.herokuapp.com request_id=f62eb48d-d944-4942-b2c8-c4ad8befd179 fwd="111.239.253.157" dyno=web.1 connect=0ms service=6ms status=500 bytes=1827 protocol=https
+2018-05-29T22:04:09.128075+00:00 heroku[router]: at=info method=GET path="/login" host=tasklist-ishii.herokuapp.com request_id=f4dbd72b-4776-4ed3-b969-6c0b5aa46033 fwd="111.239.253.157" dyno=web.1 connect=0ms service=23ms status=500 bytes=1827 protocol=https
+2018-05-29T22:04:09.105606+00:00 app[web.1]: I, [2018-05-29T22:04:09.105495 #4]  INFO -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033] Started GET "/login" for 111.239.253.157 at 2018-05-29 22:04:09 +0000
+2018-05-29T22:04:09.107212+00:00 app[web.1]: I, [2018-05-29T22:04:09.107135 #4]  INFO -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033] Processing by SessionsController#new as HTML
+2018-05-29T22:04:09.109860+00:00 app[web.1]: I, [2018-05-29T22:04:09.109778 #4]  INFO -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]   Rendering sessions/new.html.erb within layouts/application
+2018-05-29T22:04:09.123134+00:00 app[web.1]: D, [2018-05-29T22:04:09.123040 #4] DEBUG -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+2018-05-29T22:04:09.124045+00:00 app[web.1]: I, [2018-05-29T22:04:09.123966 #4]  INFO -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]   Rendered layouts/_navbar.html.erb (5.4ms)
+2018-05-29T22:04:09.116425+00:00 app[web.1]: I, [2018-05-29T22:04:09.116348 #4]  INFO -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]   Rendered sessions/new.html.erb within layouts/application (6.4ms)
+2018-05-29T22:04:09.124410+00:00 app[web.1]: I, [2018-05-29T22:04:09.124305 #4]  INFO -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033] Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.1ms)
+2018-05-29T22:04:09.125958+00:00 app[web.1]: F, [2018-05-29T22:04:09.125876 #4] FATAL -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]
+2018-05-29T22:04:09.126083+00:00 app[web.1]: LINE 1: SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LI...
+2018-05-29T22:04:09.126085+00:00 app[web.1]: ^
+2018-05-29T22:04:09.126079+00:00 app[web.1]: F, [2018-05-29T22:04:09.126002 #4] FATAL -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2018-05-29T22:04:09.126087+00:00 app[web.1]: : SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1):
+2018-05-29T22:04:09.126450+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]     14:         <ul class="nav navbar-nav navbar-right">
+2018-05-29T22:04:09.126452+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]     15:           <% if logged_in? %>
+2018-05-29T22:04:09.126445+00:00 app[web.1]: F, [2018-05-29T22:04:09.126359 #4] FATAL -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]     12:       </div>
+2018-05-29T22:04:09.126454+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]     16:             <li><%= link_to 'Users', users_path %></li>
+2018-05-29T22:04:09.126448+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]     13:       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+2018-05-29T22:04:09.126564+00:00 app[web.1]: F, [2018-05-29T22:04:09.126489 #4] FATAL -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]
+2018-05-29T22:04:09.126707+00:00 app[web.1]: F, [2018-05-29T22:04:09.126602 #4] FATAL -- : [f4dbd72b-4776-4ed3-b969-6c0b5aa46033] app/helpers/sessions_helper.rb:3:in `current_user'
+2018-05-29T22:04:09.126456+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]     17:             <li class="dropdown">
+2018-05-29T22:04:09.126710+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033] app/helpers/sessions_helper.rb:7:in `logged_in?'
+2018-05-29T22:04:09.126462+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033]     18:               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
+2018-05-29T22:04:09.126712+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033] app/views/layouts/_navbar.html.erb:15:in `_app_views_layouts__navbar_html_erb___2468634606896101654_16986140'
+2018-05-29T22:04:09.126714+00:00 app[web.1]: [f4dbd72b-4776-4ed3-b969-6c0b5aa46033] app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___3522408071662365033_18023140'
+2018-05-29T22:04:38.095127+00:00 heroku[router]: at=info method=GET path="/login" host=tasklist-ishii.herokuapp.com request_id=17df81c4-4905-4ce2-aa53-a069d843ed87 fwd="111.239.253.157" dyno=web.1 connect=0ms service=9ms status=500 bytes=1827 protocol=https
+2018-05-29T22:04:38.086177+00:00 app[web.1]: I, [2018-05-29T22:04:38.086077 #4]  INFO -- : [17df81c4-4905-4ce2-aa53-a069d843ed87] Started GET "/login" for 111.239.253.157 at 2018-05-29 22:04:38 +0000
+2018-05-29T22:04:38.088101+00:00 app[web.1]: I, [2018-05-29T22:04:38.088020 #4]  INFO -- : [17df81c4-4905-4ce2-aa53-a069d843ed87]   Rendering sessions/new.html.erb within layouts/application
+2018-05-29T22:04:38.086943+00:00 app[web.1]: I, [2018-05-29T22:04:38.086878 #4]  INFO -- : [17df81c4-4905-4ce2-aa53-a069d843ed87] Processing by SessionsController#new as HTML
+2018-05-29T22:04:38.089281+00:00 app[web.1]: I, [2018-05-29T22:04:38.089202 #4]  INFO -- : [17df81c4-4905-4ce2-aa53-a069d843ed87]   Rendered sessions/new.html.erb within layouts/application (1.0ms)
+2018-05-29T22:04:38.092442+00:00 app[web.1]: I, [2018-05-29T22:04:38.092372 #4]  INFO -- : [17df81c4-4905-4ce2-aa53-a069d843ed87]   Rendered layouts/_navbar.html.erb (2.5ms)
+2018-05-29T22:04:38.091886+00:00 app[web.1]: D, [2018-05-29T22:04:38.091794 #4] DEBUG -- : [17df81c4-4905-4ce2-aa53-a069d843ed87]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+2018-05-29T22:04:38.093556+00:00 app[web.1]: F, [2018-05-29T22:04:38.093479 #4] FATAL -- : [17df81c4-4905-4ce2-aa53-a069d843ed87]
+2018-05-29T22:04:38.092637+00:00 app[web.1]: I, [2018-05-29T22:04:38.092563 #4]  INFO -- : [17df81c4-4905-4ce2-aa53-a069d843ed87] Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+2018-05-29T22:04:38.093624+00:00 app[web.1]: F, [2018-05-29T22:04:38.093552 #4] FATAL -- : [17df81c4-4905-4ce2-aa53-a069d843ed87] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2018-05-29T22:04:38.093628+00:00 app[web.1]: LINE 1: SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LI...
+2018-05-29T22:04:38.093631+00:00 app[web.1]: ^
+2018-05-29T22:04:38.093829+00:00 app[web.1]: F, [2018-05-29T22:04:38.093765 #4] FATAL -- : [17df81c4-4905-4ce2-aa53-a069d843ed87]     12:       </div>
+2018-05-29T22:04:38.093633+00:00 app[web.1]: : SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1):
+2018-05-29T22:04:38.093834+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87]     13:       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+2018-05-29T22:04:38.093836+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87]     14:         <ul class="nav navbar-nav navbar-right">
+2018-05-29T22:04:38.093838+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87]     15:           <% if logged_in? %>
+2018-05-29T22:04:38.093842+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87]     17:             <li class="dropdown">
+2018-05-29T22:04:38.093846+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87]     18:               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
+2018-05-29T22:04:38.093840+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87]     16:             <li><%= link_to 'Users', users_path %></li>
+2018-05-29T22:04:38.093975+00:00 app[web.1]: F, [2018-05-29T22:04:38.093906 #4] FATAL -- : [17df81c4-4905-4ce2-aa53-a069d843ed87] app/helpers/sessions_helper.rb:3:in `current_user'
+2018-05-29T22:04:38.093898+00:00 app[web.1]: F, [2018-05-29T22:04:38.093820 #4] FATAL -- : [17df81c4-4905-4ce2-aa53-a069d843ed87]
+2018-05-29T22:04:38.093980+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87] app/views/layouts/_navbar.html.erb:15:in `_app_views_layouts__navbar_html_erb___2468634606896101654_16986140'
+2018-05-29T22:04:38.093978+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87] app/helpers/sessions_helper.rb:7:in `logged_in?'
+2018-05-29T22:04:38.093982+00:00 app[web.1]: [17df81c4-4905-4ce2-aa53-a069d843ed87] app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___3522408071662365033_18023140'
+2018-05-29T22:04:38.466252+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=tasklist-ishii.herokuapp.com request_id=528d0a3e-eb7d-4012-a4a9-9c894c87b44f fwd="111.239.253.157" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=https
+2018-05-29T22:38:57.962549+00:00 heroku[web.1]: Idling
+2018-05-29T22:38:57.963182+00:00 heroku[web.1]: State changed from up to down
+2018-05-29T22:38:58.667483+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2018-05-29T22:38:58.668509+00:00 app[web.1]: === puma shutdown: 2018-05-29 22:38:58 +0000 ===
+2018-05-29T22:38:58.668703+00:00 app[web.1]: Exiting
+2018-05-29T22:38:58.668514+00:00 app[web.1]: - Goodbye!
+2018-05-29T22:38:58.656138+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2018-05-29T22:38:58.765458+00:00 heroku[web.1]: Process exited with status 143
+2018-05-30T12:26:56.275932+00:00 heroku[web.1]: Unidling
+2018-05-30T12:26:56.276616+00:00 heroku[web.1]: State changed from down to starting
+2018-05-30T12:27:00.410750+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 45669 -e production`
+2018-05-30T12:27:05.118397+00:00 app[web.1]: => Booting Puma
+2018-05-30T12:27:05.118420+00:00 app[web.1]: => Rails 5.0.7 application starting in production on http://0.0.0.0:45669
+2018-05-30T12:27:05.118422+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2018-05-30T12:27:05.118450+00:00 app[web.1]: Puma starting in single mode...
+2018-05-30T12:27:05.118508+00:00 app[web.1]: * Version 3.11.4 (ruby 2.3.7-p456), codename: Love Song
+2018-05-30T12:27:05.118548+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2018-05-30T12:27:05.118599+00:00 app[web.1]: * Environment: production
+2018-05-30T12:27:05.118758+00:00 app[web.1]: * Listening on tcp://0.0.0.0:45669
+2018-05-30T12:27:05.119223+00:00 app[web.1]: Use Ctrl-C to stop
+2018-05-30T12:27:05.424943+00:00 heroku[web.1]: State changed from starting to up
+2018-05-30T12:27:06.599093+00:00 app[web.1]: I, [2018-05-30T12:27:06.598643 #4]  INFO -- : [20a75296-4555-43fc-ab53-35d9376da88d] Started GET "/login" for 106.180.12.49 at 2018-05-30 12:27:06 +0000
+2018-05-30T12:27:06.607492+00:00 app[web.1]: I, [2018-05-30T12:27:06.607334 #4]  INFO -- : [20a75296-4555-43fc-ab53-35d9376da88d] Processing by SessionsController#new as HTML
+2018-05-30T12:27:06.623568+00:00 app[web.1]: I, [2018-05-30T12:27:06.623280 #4]  INFO -- : [20a75296-4555-43fc-ab53-35d9376da88d]   Rendering sessions/new.html.erb within layouts/application
+2018-05-30T12:27:06.634092+00:00 app[web.1]: I, [2018-05-30T12:27:06.633975 #4]  INFO -- : [20a75296-4555-43fc-ab53-35d9376da88d]   Rendered sessions/new.html.erb within layouts/application (10.2ms)
+2018-05-30T12:27:06.721682+00:00 app[web.1]: D, [2018-05-30T12:27:06.721541 #4] DEBUG -- : [20a75296-4555-43fc-ab53-35d9376da88d]   [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+2018-05-30T12:27:06.722652+00:00 app[web.1]: I, [2018-05-30T12:27:06.722572 #4]  INFO -- : [20a75296-4555-43fc-ab53-35d9376da88d]   Rendered layouts/_navbar.html.erb (84.9ms)
+2018-05-30T12:27:06.723020+00:00 app[web.1]: I, [2018-05-30T12:27:06.722944 #4]  INFO -- : [20a75296-4555-43fc-ab53-35d9376da88d] Completed 500 Internal Server Error in 115ms (ActiveRecord: 51.2ms)
+2018-05-30T12:27:06.724745+00:00 app[web.1]: F, [2018-05-30T12:27:06.724666 #4] FATAL -- : [20a75296-4555-43fc-ab53-35d9376da88d]
+2018-05-30T12:27:06.724886+00:00 app[web.1]: F, [2018-05-30T12:27:06.724813 #4] FATAL -- : [20a75296-4555-43fc-ab53-35d9376da88d] ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "users" does not exist
+2018-05-30T12:27:06.724889+00:00 app[web.1]: LINE 1: SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LI...
+2018-05-30T12:27:06.724892+00:00 app[web.1]: ^
+2018-05-30T12:27:06.724893+00:00 app[web.1]: : SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1):
+2018-05-30T12:27:06.725243+00:00 app[web.1]: F, [2018-05-30T12:27:06.725169 #4] FATAL -- : [20a75296-4555-43fc-ab53-35d9376da88d]     12:       </div>
+2018-05-30T12:27:06.725246+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d]     13:       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+2018-05-30T12:27:06.725248+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d]     14:         <ul class="nav navbar-nav navbar-right">
+2018-05-30T12:27:06.725249+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d]     15:           <% if logged_in? %>
+2018-05-30T12:27:06.725251+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d]     16:             <li><%= link_to 'Users', users_path %></li>
+2018-05-30T12:27:06.725253+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d]     17:             <li class="dropdown">
+2018-05-30T12:27:06.725261+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d]     18:               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %> <span class="caret"></span></a>
+2018-05-30T12:27:06.725361+00:00 app[web.1]: F, [2018-05-30T12:27:06.725289 #4] FATAL -- : [20a75296-4555-43fc-ab53-35d9376da88d]
+2018-05-30T12:27:06.725476+00:00 app[web.1]: F, [2018-05-30T12:27:06.725408 #4] FATAL -- : [20a75296-4555-43fc-ab53-35d9376da88d] app/helpers/sessions_helper.rb:3:in `current_user'
+2018-05-30T12:27:06.725478+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d] app/helpers/sessions_helper.rb:7:in `logged_in?'
+2018-05-30T12:27:06.725480+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d] app/views/layouts/_navbar.html.erb:15:in `_app_views_layouts__navbar_html_erb__2744961065609171096_26004840'
+2018-05-30T12:27:06.725482+00:00 app[web.1]: [20a75296-4555-43fc-ab53-35d9376da88d] app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___1287238654939780103_26908340'
+2018-05-30T12:27:06.726703+00:00 heroku[router]: at=info method=GET path="/login" host=tasklist-ishii.herokuapp.com request_id=20a75296-4555-43fc-ab53-35d9376da88d fwd="106.180.12.49" dyno=web.1 connect=1ms service=133ms status=500 bytes=1827 protocol=https
+2018-05-30T12:27:07.697816+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=tasklist-ishii.herokuapp.com request_id=9efe7836-a460-42bf-ae08-3be55d28eb5b fwd="106.180.12.49" dyno=web.1 connect=1ms service=3ms status=200 bytes=143 protocol=https
